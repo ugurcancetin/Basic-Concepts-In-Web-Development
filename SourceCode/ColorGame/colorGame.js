@@ -1,3 +1,15 @@
+var game = {}
+
+game.init = function(){
+	setUpModeButtons();
+	
+	setUpSquares();
+
+	reset();
+}
+game.init();
+
+
 var numSquares = 6;
 //var colors = generateRandomColors(numSquares);
 var colors = [];
@@ -15,14 +27,14 @@ var modeButtons = document.querySelectorAll(".mode");
 
 init ();
 
-function init(){
+// function init(){
 
-	setUpModeButtons();
+// 	setUpModeButtons();
 	
-	setUpSquares();
+// 	setUpSquares();
 
-	reset();
-}
+// 	reset();
+// }
 
 function setUpModeButtons(){
 	//mode buttons event listeners
