@@ -17,6 +17,14 @@ init ();
 
 function init(){
 
+	setUpModeButtons();
+	
+	setUpSquares();
+
+	reset();
+}
+
+function setUpModeButtons(){
 	//mode buttons event listeners
 	for (var i = 0; i < modeButtons.length; i++) {
 		modeButtons[i].addEventListener("click", function(){
@@ -33,8 +41,10 @@ function init(){
 			reset();
 		});
 	}	
+}
 
-	for (var i = 0; i < squares.length; i++) {
+function setUpSquares(){
+		for (var i = 0; i < squares.length; i++) {
 
 		//add click listeners to squares
 		squares[i].addEventListener("click", function(){
@@ -52,11 +62,7 @@ function init(){
 			}
 		});
 	}
-
-	reset();
 }
-
-
 function reset (){
 
 	//generate all the new colors
