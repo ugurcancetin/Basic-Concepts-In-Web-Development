@@ -1,14 +1,3 @@
-var game = {}
-
-game.init = function(){
-	setUpModeButtons();
-	
-	setUpSquares();
-
-	reset();
-}
-game.init();
-
 
 var numSquares = 6;
 //var colors = generateRandomColors(numSquares);
@@ -18,6 +7,7 @@ var pickedColor;
 var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
+var container = document.querySelector("#container");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 //var easyButton = document.querySelector("#easyBtn");
@@ -27,14 +17,16 @@ var modeButtons = document.querySelectorAll(".mode");
 
 init ();
 
-// function init(){
 
-// 	setUpModeButtons();
+function init(){
+
+
+	setUpModeButtons();	
 	
-// 	setUpSquares();
+	setUpSquares();
 
-// 	reset();
-// }
+	reset();
+}
 
 function setUpModeButtons(){
 	//mode buttons event listeners
@@ -42,14 +34,40 @@ function setUpModeButtons(){
 		modeButtons[i].addEventListener("click", function(){
 			modeButtons[0].classList.remove("selected");
 			modeButtons[1].classList.remove("selected");
+			modeButtons[2].classList.remove("selected");
+			modeButtons[3].classList.remove("selected");
 			this.classList.add("selected");
-			this.textContent === "Easy" ? numSquares = 3: numSquares = 6;
+			//this.textContent === "Easy" ? numSquares = 3: numSquares = 6;
 			//does the same thing up and down
-			/*if (this.textContent === "Easy") {
+			if (this.textContent === "Easy") {
 				numSquares = 3;
-			}else{
+				for (var i = 0; i < squares.length; i++) {
+					squares[i].style.width="30%"
+					squares[i].style.margin="1.66%";
+				};
+				container.style.width= 600;
+			}else if(this.textContent == "Medium"){
 				numSquares = 6;
-			}*/
+				for (var i = 0; i < squares.length; i++) {
+					squares[i].style.width="30%"
+					squares[i].style.margin="1.66%";
+				};
+				container.style.width= 600;
+			}else if(this.textContent == "Hard"){
+				numSquares = 8;
+				for (var i = 0; i < squares.length; i++) {
+					squares[i].style.width="17%"
+					squares[i].style.margin="3%";
+				};
+				container.style.width= 750;
+			}else if (this.textContent == "Master"){
+				numSquares = 10;
+				for (var i = 0; i < squares.length; i++) {
+					squares[i].style.width="14%"
+					squares[i].style.margin="3%";
+				};
+				container.style.width= 800;
+			}
 			reset();
 		});
 	}	
@@ -97,6 +115,7 @@ function reset (){
 		};
 	};
 	h1.style.background="steelblue";
+	//colorDisplay.textContent=randomColor().r/10 + randomColor().g/10 ;
 }
 
 // easyBtn.addEventListener("click", function(){

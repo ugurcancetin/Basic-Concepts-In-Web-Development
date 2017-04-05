@@ -16,12 +16,12 @@
  }
  #container{
  	margin: 20px auto;
- 	max-width: 600; 
+ 	max-width: 600;
 
  }
  #message{
  	display: inline-block;
- 	width: 15%;
+ 	width: 10%;
  }
  h1{
  	text-align: center;
