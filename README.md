@@ -47,7 +47,9 @@ Branches are adding the topics on the top of previous branch. You will be able t
 
 Listed items are very popular in open source world and you can find many different tutorials. Just search for it!
 
-End with an example of getting some data out of the system or using it for a little demo
+Codes are having inline comments which I think will be useful to understand the instances.
+
+Hope it will be useful for the beginners.
 
 
 ## Contributing
